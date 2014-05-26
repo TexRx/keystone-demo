@@ -16,15 +16,15 @@ console.log('in location.js model, Types is: ', Types);
 
 Location.add({
     name: { type: String, required: true, initial: true },
-    workflowStatus: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
+    workflowStatus: { type: Types.Select, options: 'draft, published, archived', 'default': 'draft', index: true },
     phone: { type: String },
     description: {
-        short: { type: Types.Html, wysiwyg: true },
-        extended: { type: Types.Html, wysiwyg: true }
+        'short': { type: Types.Html, wysiwyg: true },
+        'extended': { type: Types.Html, wysiwyg: true }
     },
     photo: { type: Types.CloudinaryImage },
     mapUrl: { type: Types.Url },
-    address: { type: Types.Location, required: true}
+    address: { type: Types.Location, require: true, initial: false}
 });
 
 Location.relationship({ path: 'offices', ref: 'Professional', refPath: 'address'});

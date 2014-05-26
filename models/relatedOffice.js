@@ -10,7 +10,7 @@ var RelatedOffice = new keystone.List('RelatedOffice');
 
 RelatedOffice.add({
     name: { type: String },
-    office: { type: Types.Relationship, ref: 'Location', required: true },
+    office: { type: Types.Relationship, ref: 'Location', required: true, initial: false },
     phone: { type: String },
     fax: { type: String }
 });
